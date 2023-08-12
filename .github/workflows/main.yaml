@@ -1,5 +1,5 @@
 # Your workflow name.
-name: Deploy to fly.io
+name: Deploy to render
 
 # Run workflow on every push to main branch.
 on:
@@ -18,7 +18,7 @@ jobs:
 
 ### ⬇ IMPORTANT PART ⬇ ###
 
-      - name: Build, Push and Release a Docker container to fly.io # Your custom step name
+      - name: Build, Push and Release a Docker container to render # Your custom step name
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
         with:
           # Below you must provide variables for your Heroku app.
@@ -26,14 +26,14 @@ jobs:
           # The email address associated with your Heroku account.
           # If you don't want to use repository secrets (which is recommended) you can do:
           # email: my.email@example.com
-          email: ${{ secrets.HEROKU_EMAIL }}
+          #email: ${{ secrets.HEROKU_EMAIL }}
           
           # Heroku API key associated with provided user's email.
           # Api Key is available under your Heroku account settings.
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          #heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           
           # Name of the heroku application to which the build is to be sent.
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          #heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
 
           # (Optional, default: "./")
           # Dockerfile directory.
