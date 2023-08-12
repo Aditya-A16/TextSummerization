@@ -2,7 +2,7 @@ import requests
 #from config import api_token
 import os
 
-api_token = os.environ.get('api_token')
+api_token = os.environ.get('API_TOKEN')
 
 def query(payload, model_id, api_token):
 	headers = {"Authorization": f"Bearer {api_token}"}
